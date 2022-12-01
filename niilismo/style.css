@@ -2,24 +2,23 @@
 * {
     overflow-x: hidden;
 }
-
 body {
     margin: 0;
     padding: 0;
     background-image: url(https://img.freepik.com/vetores-gratis/fundo-de-formas-abstratas-brancas_79603-1362.jpg?w=2000);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 .linha {
-    overflow-y: hidden;
     height: 13vh;
     width: 100vw;
     background-color: red;
     justify-content: space-between;
-    align-items: center;
     display: flex;
+    align-items: center;
+    overflow-y: hidden;
 }
 #title{
     font-size: 50px;
@@ -61,22 +60,33 @@ main {
     font-size: 25px;
     padding-left: 15px;
 }
-.conteudo{
+
+.conteudo img {
+    width: 60vw;
+}
+
+.conteudo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 360px) {
     body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-content: center;
     }
+
     .linha {
         width: 100vw;
+        gap: 1.5rem;
+    }
+
+    .links {
+        padding: 0;
+        flex-wrap: wrap;
     }
 
     #title {
@@ -84,30 +94,24 @@ main {
         padding-left: 10px;
     }
 
-    .links {
-        flex-wrap: wrap;
+    main {
+        width: 90vw;
     }
 
     input {
         font-size: 15px;
         margin-left: 10px;
-        margin-top: -5px;
-    }
-
-    main {
-        width: 90vw;
-        margin-left: 0;
     }
 
     .conteudo h1 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .conteudo p {
         font-size: 17px;
-    }
+    }   
 
     .conteudo img {
-        width: 70vw;
+        width: 50vw;
     }
 }
