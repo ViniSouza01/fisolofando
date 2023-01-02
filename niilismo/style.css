@@ -32,6 +32,9 @@ body {
     font-size: 30px;
     padding: 30px;
 }
+#menu {
+    display: none;
+}
 input {
     background-color: black;
     color: white;
@@ -69,6 +72,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px;
 }
 
 @media (max-width: 360px) {
@@ -80,13 +84,74 @@ main {
     }
 
     .linha {
-        width: 100vw;
-        gap: 1.5rem;
+        height: 70px;
+        justify-content: space-between;
     }
 
     .links {
         padding: 0;
         flex-wrap: wrap;
+    }
+
+    #btn-mobile {
+        display: flex;
+        margin-right: 10px;
+    }
+
+    #menu {
+        margin-right: 10px;
+        display: flex;
+        background-color: transparent;
+        border: none;
+        font-size: 1rem;
+    }
+
+    label {
+        display: flex;
+    }
+
+    #hamburguer {
+        border-top: 2px solid;
+        width: 25px;
+    }
+
+    #hamburguer::after, #hamburguer::before {
+        display: block;
+        content: '';
+        border-top: 2px solid black;
+        margin-top: 7px;
+        transition: .5s;
+    }
+
+    #btn-mobile.active #hamburguer { /* Button pressioned */
+        border: none;
+    }
+
+    #btn-mobile.active #hamburguer::after{
+        transform: rotate(135deg);
+    }
+
+    #btn-mobile.active #hamburguer::before {
+        transform: rotate(-135deg);
+        margin-bottom: -8px;
+    }
+
+    #nav {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        align-items: center;
+        padding-left: 5px;
+        right: -200px;
+        background-color: rgba(0, 0, 0, 0.5);
+        gap: 2rem;
+        height: 100%;
+        top: 70px;
+        transition: .5s;
+    }
+
+    #nav.active {
+        right: 0;
     }
 
     #title {
@@ -96,11 +161,6 @@ main {
 
     main {
         width: 90vw;
-    }
-
-    input {
-        font-size: 15px;
-        margin-left: 10px;
     }
 
     .conteudo h1 {
